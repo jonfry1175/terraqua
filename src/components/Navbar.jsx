@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -16,22 +16,22 @@ const Navbar = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'What We Do', path: '/what-we-do' },
-    { name: 'Expansion', path: '/expansion' },
-    { name: 'Contact', path: '/contact' },
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "What We Do", path: "/what-we-do" },
+    { name: "Expansion", path: "/expansion" },
+    { name: "Contact", path: "/contact" },
   ];
 
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-blue-900 shadow-lg py-4' : 'bg-transparent py-6'
+        isScrolled ? "bg-blue-900 shadow-lg py-4" : "bg-transparent py-6"
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
@@ -47,8 +47,8 @@ const Navbar = () => {
               to={link.path}
               className={`text-sm font-medium transition-colors duration-300 ${
                 location.pathname === link.path
-                  ? 'text-cyan-400'
-                  : 'text-white hover:text-cyan-300'
+                  ? "text-cyan-400"
+                  : "text-white hover:text-cyan-300"
               }`}
             >
               {link.name}
@@ -75,8 +75,8 @@ const Navbar = () => {
                 to={link.path}
                 className={`text-sm font-medium transition-colors duration-300 ${
                   location.pathname === link.path
-                    ? 'text-cyan-400'
-                    : 'text-white hover:text-cyan-300'
+                    ? "text-cyan-400"
+                    : "text-white hover:text-cyan-300"
                 }`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
