@@ -1,11 +1,10 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Send } from "lucide-react";
 
 const Contact = () => {
   return (
     <div className="pt-20 min-h-screen flex flex-col">
-      <div className="flex-grow flex flex-col md:flex-row">
+      <div className="grow flex flex-col md:flex-row">
         {/* Visual Side */}
         <div className="md:w-1/2 relative min-h-[400px] md:min-h-full">
           <div
@@ -90,7 +89,10 @@ const Contact = () => {
               <h4 className="text-lg font-bold text-blue-900 mb-4">
                 Send us a message
               </h4>
-              <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
+              <form
+                className="space-y-4"
+                onSubmit={(e: React.FormEvent) => e.preventDefault()}
+              >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <input
                     type="text"
@@ -105,7 +107,7 @@ const Contact = () => {
                 </div>
                 <textarea
                   placeholder="Message"
-                  rows="4"
+                  rows={4}
                   className="w-full px-4 py-3 rounded-lg bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
                 ></textarea>
                 <button className="bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 flex items-center gap-2">
